@@ -10,19 +10,19 @@
    
     async function getData() {
       
-      axios.get("https://nqhkpgaezalnpxtizxzv.supabase.co/storage/v1/object/public/projects/7acac802-bed4-45b5-8d75-b2d3786582ec/Template4/Footer/index.html").then(res=>{
+      axios.get("https://nqhkpgaezalnpxtizxzv.supabase.co/storage/v1/object/public/projects/7acac802-bed4-45b5-8d75-b2d3786582ec/Template3/Footer/index.html").then(res=>{
         console.log("res=> ",res);
         document.getElementById("FooterID").innerHTML = res.data;
         
         //* css
-        axios.get("https://nqhkpgaezalnpxtizxzv.supabase.co/storage/v1/object/public/projects/7acac802-bed4-45b5-8d75-b2d3786582ec/Template4/Footer/style.css").then(CssRes=>{
+        axios.get("https://nqhkpgaezalnpxtizxzv.supabase.co/storage/v1/object/public/projects/7acac802-bed4-45b5-8d75-b2d3786582ec/Template3/Footer/style.css").then(CssRes=>{
           console.log("CssRes", CssRes);
           let createCssElement = document.createElement("style");
           // createCssElement.nodeValue = CssRes.data;
           createCssElement.appendChild(document.createTextNode(CssRes.data));
           
           document.getElementById("FooterID").appendChild(createCssElement)
-          axios.get("https://nqhkpgaezalnpxtizxzv.supabase.co/storage/v1/object/public/projects/7acac802-bed4-45b5-8d75-b2d3786582ec/Template4/Footer/script.js").then(JsRes=>{
+          axios.get("https://nqhkpgaezalnpxtizxzv.supabase.co/storage/v1/object/public/projects/7acac802-bed4-45b5-8d75-b2d3786582ec/Template3/Footer/script.js").then(JsRes=>{
             console.log("JsRes", JsRes);
             eval(JsRes.data)
           })
